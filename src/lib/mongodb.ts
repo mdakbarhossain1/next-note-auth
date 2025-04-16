@@ -5,7 +5,7 @@ const client = new MongoClient(uri);
 const dbName = 'note-app';
 
 export async function connectToDB() {
-  if (!client.topology?.isConnected()) await client.connect();
+  if (!client.isConnected?.()) await client.connect();
   const db = client.db(dbName);
   return { db, client };
 }
